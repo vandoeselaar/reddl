@@ -1,0 +1,12 @@
+services:
+  reddit-downloader:
+    build: .
+    volumes:
+      - ./output:/app/output
+    environment:
+      - REDDIT_CLIENT_ID=${REDDIT_CLIENT_ID}
+      - REDDIT_CLIENT_SECRET=${REDDIT_CLIENT_SECRET}
+    # Override command per run, e.g.:
+    #   docker compose run reddit-downloader -u USERNAME
+    # Or set a default user here:
+    # command: ["-u", "some_user", "-l", "100"]
